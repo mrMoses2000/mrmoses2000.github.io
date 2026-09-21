@@ -75,9 +75,6 @@ systemctl --user is-active portfolio-web.service > /dev/null || systemctl --user
 systemctl --user is-active portfolio-tunnel.service > /dev/null || systemctl --user start portfolio-tunnel.service
 "
 
-# 7. Print active public URL
+# 7. Print active public URLs
 echo ""
-echo "========================================================"
-echo "               🎉 DEPLOYMENT SUCCESSFUL!                "
-echo "========================================================"
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$REMOTE_HOST" "/home/moses/apps/portfolio-cv/status.sh"
