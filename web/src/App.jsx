@@ -11,12 +11,28 @@ import { ResumeDocument } from './components/ResumeDocument'
 import { Send, MessageSquare, Download } from 'lucide-react'
 
 export function App() {
-  // Read initial params from URL if present
+  // Read initial params from URL or path if present
   const getInitialState = () => {
     const params = new URLSearchParams(window.location.search)
-    const initialLang = params.get('lang') === 'en' ? 'en' : 'ru'
-    const initialMode = params.get('mode') === 'systems' ? 'systems' : 'business'
-    const initialView = params.get('view') || 'portfolio'
+    const path = window.location.pathname.toLowerCase()
+
+    let initialLang = 'ru'
+    if (params.get('lang') === 'en' || path.startsWith('/en')) {
+      initialLang = 'en'
+    }
+
+    let initialMode = 'business'
+    if (path.includes('/tech') || path.includes('/systems') || params.get('mode') === 'systems') {
+      initialMode = 'systems'
+    } else if (path.includes('/business') || params.get('mode') === 'business') {
+      initialMode = 'business'
+    }
+
+    let initialView = 'portfolio'
+    if (path.includes('/resume') || path.includes('/cv') || params.get('view') === 'resume') {
+      initialView = 'resume'
+    }
+
     return { lang: initialLang, mode: initialMode, view: initialView }
   }
 
