@@ -147,7 +147,14 @@ export function ResumeDocument({ data, lang, mode }) {
               <div key={idx} className="text-xs [break-inside:avoid]">
                 <div className="flex items-baseline justify-between gap-1">
                   <span className="font-bold text-zinc-950">
-                    {exp.role} <span className="font-medium text-zinc-700">| {exp.company}</span>
+                    {exp.role}{" "}
+                    {exp.url ? (
+                      <a href={exp.url} className="font-medium text-zinc-700 hover:text-emerald-700 underline decoration-zinc-400">
+                        | {exp.company}
+                      </a>
+                    ) : (
+                      <span className="font-medium text-zinc-700">| {exp.company}</span>
+                    )}
                   </span>
                   <span className="font-mono text-[10px] text-zinc-600 whitespace-nowrap">
                     {exp.period} · {exp.location}
@@ -170,7 +177,13 @@ export function ResumeDocument({ data, lang, mode }) {
           </h2>
           <div className="text-xs">
             <div className="flex items-baseline justify-between">
-              <span className="font-bold text-zinc-950">{data.personal.education}</span>
+              {data.personal.educationUrl ? (
+                <a href={data.personal.educationUrl} className="font-bold text-zinc-950 hover:underline">
+                  {data.personal.education}
+                </a>
+              ) : (
+                <span className="font-bold text-zinc-950">{data.personal.education}</span>
+              )}
               <span className="font-mono text-[10px] text-zinc-600">2018–2021 | Новосибирск</span>
             </div>
             <p className="text-zinc-700 mt-0.5">{data.personal.educationDetails}</p>

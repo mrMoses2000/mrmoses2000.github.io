@@ -15,6 +15,7 @@ export const content = {
       githubUrl: "https://github.com/mrMoses2000",
       education: "Новосибирский государственный университет (НГУ)",
       educationLogo: "/logos/nsu.png",
+      educationUrl: "https://www.nsu.ru/n/",
       educationDetails: "Физико-техническая информатика (2018–2021) · База: высшая математика, физика, алгоритмы",
     },
     aiPhilosophy: {
@@ -231,6 +232,8 @@ export const content = {
         period: "Янв 2023 — Окт 2023",
         role: "Инженер-программист / Менеджер автоматизации",
         company: "ТОО «Завод Арматура Тараз»",
+        logo: "/logos/atz.png",
+        url: "https://tooatz.kz/",
         location: "Тараз, Казахстан",
         desc: "Автоматизация производственных и логистических процессов промышленного предприятия.",
         details: [
@@ -244,6 +247,7 @@ export const content = {
         role: "C Developer / Systems Engineer",
         company: "Ideco",
         logo: "/logos/ideco.png",
+        url: "https://ideco.ru/",
         location: "Екатеринбург",
         desc: "Разработка модулей высокопроизводительной сетевой фильтрации трафика в Linux.",
         details: [
@@ -258,6 +262,7 @@ export const content = {
         role: "Инженер-программист (Embedded & Systems)",
         company: "ООО «Ин-Софт» (Eltex)",
         logo: "/logos/eltex.png",
+        url: "https://eltex.ru/",
         location: "Новосибирск",
         desc: "Системное программирование на C/C++ для сетевого оборудования (Wi-Fi точки доступа на MIPS-чипсетах Realtek).",
         details: [
@@ -270,6 +275,8 @@ export const content = {
         period: "Окт 2020 — Авг 2021",
         role: "Лаборант 3 категории",
         company: "Институт ядерной физики им. Г.И. Будкера СО РАН (ИЯФ)",
+        logo: "/logos/inp.png",
+        url: "https://www.inp.nsk.su/",
         location: "Новосибирск",
         desc: "Аппаратная и микроконтроллерная разработка научных приборов.",
         details: [
@@ -346,6 +353,7 @@ export const content = {
       githubUrl: "https://github.com/mrMoses2000",
       education: "Novosibirsk State University (NSU)",
       educationLogo: "/logos/nsu.png",
+      educationUrl: "https://www.nsu.ru/n/",
       educationDetails: "Physical & Technical Informatics (2018–2021) · Strong mathematical & physics foundation",
     },
     aiPhilosophy: {
@@ -562,6 +570,8 @@ export const content = {
         period: "Jan 2023 — Oct 2023",
         role: "Software Engineer / Automation Manager",
         company: "TOO Zavod Armatura Taraz",
+        logo: "/logos/atz.png",
+        url: "https://tooatz.kz/",
         location: "Taraz, Kazakhstan",
         desc: "Industrial software automation for metallurgical and logistics operations.",
         details: [
@@ -575,6 +585,7 @@ export const content = {
         role: "C Developer / Systems Engineer",
         company: "Ideco",
         logo: "/logos/ideco.png",
+        url: "https://ideco.ru/",
         location: "Ekaterinburg",
         desc: "High-throughput Linux network packet filtering and security software.",
         details: [
@@ -589,6 +600,7 @@ export const content = {
         role: "Systems & Embedded Software Engineer",
         company: "In-Soft LLC (Eltex)",
         logo: "/logos/eltex.png",
+        url: "https://eltex.ru/",
         location: "Novosibirsk",
         desc: "Systems programming in C/C++ on Linux for Wi-Fi access points powered by Realtek MIPS chipsets.",
         details: [
@@ -601,6 +613,8 @@ export const content = {
         period: "Oct 2020 — Aug 2021",
         role: "Laboratory Assistant, 3rd Category",
         company: "Budker Institute of Nuclear Physics (BINP SB RAS)",
+        logo: "/logos/inp.png",
+        url: "https://www.inp.nsk.su/",
         location: "Novosibirsk",
         desc: "Microcontroller firmware and digital signal conditioning for scientific instruments.",
         details: [

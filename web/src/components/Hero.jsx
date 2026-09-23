@@ -132,19 +132,43 @@ export function Hero({ data, mode, lang }) {
             <div className="w-full max-w-xs p-3 rounded-xl bg-zinc-900/30 border border-zinc-800/60 text-xs text-zinc-400 space-y-1.5">
               <div className="flex justify-between items-center">
                 <span className="text-zinc-500">{isRu ? "Базовое образование:" : "Education:"}</span>
-                <span className="inline-flex items-center gap-1.5 text-zinc-300 font-medium">
-                  {data.personal.educationLogo && (
-                    <span className="inline-flex items-center h-4 px-1 py-0.5 rounded bg-white border border-zinc-200/90 shadow-xs shrink-0">
-                      <img
-                        src={data.personal.educationLogo}
-                        alt="НГУ"
-                        className="h-2.5 w-auto object-contain max-w-[45px]"
-                        loading="lazy"
-                      />
+                {data.personal.educationUrl ? (
+                  <a
+                    href={data.personal.educationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white font-medium group transition-colors"
+                    title={`НГУ — ${data.personal.educationUrl}`}
+                  >
+                    {data.personal.educationLogo && (
+                      <span className="inline-flex items-center h-4 px-1 py-0.5 rounded bg-white border border-zinc-200/90 shadow-xs shrink-0 group-hover:scale-105 group-hover:border-emerald-500/50 transition-all">
+                        <img
+                          src={data.personal.educationLogo}
+                          alt="НГУ"
+                          className="h-2.5 w-auto object-contain max-w-[45px]"
+                          loading="lazy"
+                        />
+                      </span>
+                    )}
+                    <span className="group-hover:underline group-hover:text-emerald-400 transition-colors">
+                      {isRu ? "НГУ (Новосибирск)" : "NSU (Novosibirsk)"}
                     </span>
-                  )}
-                  {isRu ? "НГУ (Новосибирск)" : "NSU (Novosibirsk)"}
-                </span>
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 text-zinc-300 font-medium">
+                    {data.personal.educationLogo && (
+                      <span className="inline-flex items-center h-4 px-1 py-0.5 rounded bg-white border border-zinc-200/90 shadow-xs shrink-0">
+                        <img
+                          src={data.personal.educationLogo}
+                          alt="НГУ"
+                          className="h-2.5 w-auto object-contain max-w-[45px]"
+                          loading="lazy"
+                        />
+                      </span>
+                    )}
+                    {isRu ? "НГУ (Новосибирск)" : "NSU (Novosibirsk)"}
+                  </span>
+                )}
               </div>
               <div className="flex justify-between">
                 <span className="text-zinc-500">{isRu ? "Опыт в индустрии:" : "Industry Exp:"}</span>

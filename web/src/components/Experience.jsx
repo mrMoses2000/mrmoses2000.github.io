@@ -1,5 +1,5 @@
 import React from 'react'
-import { Briefcase, Calendar, MapPin, GraduationCap, CheckCircle } from 'lucide-react'
+import { Briefcase, Calendar, MapPin, GraduationCap, CheckCircle, ExternalLink } from 'lucide-react'
 
 export function Experience({ data, lang }) {
   const isRu = lang === 'ru'
@@ -34,16 +34,46 @@ export function Experience({ data, lang }) {
                     <span>{item.role}</span>
                   </h3>
                   <span className="text-zinc-500 font-normal">·</span>
-                  <span className="text-zinc-300 font-semibold">{item.company}</span>
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-300 hover:text-emerald-400 font-semibold inline-flex items-center gap-1 transition-colors group"
+                      title={`${item.company} — ${item.url}`}
+                    >
+                      <span className="group-hover:underline">{item.company}</span>
+                      <ExternalLink className="w-3 h-3 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+                    </a>
+                  ) : (
+                    <span className="text-zinc-300 font-semibold">{item.company}</span>
+                  )}
                   {item.logo && (
-                    <span className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0">
-                      <img
-                        src={item.logo}
-                        alt={item.company}
-                        className="h-3.5 w-auto object-contain max-w-[85px]"
-                        loading="lazy"
-                      />
-                    </span>
+                    item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0 hover:scale-105 hover:border-emerald-500/60 transition-all duration-150 cursor-pointer"
+                        title={`${item.company} — ${item.url}`}
+                      >
+                        <img
+                          src={item.logo}
+                          alt={item.company}
+                          className="h-3.5 w-auto object-contain max-w-[85px]"
+                          loading="lazy"
+                        />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0">
+                        <img
+                          src={item.logo}
+                          alt={item.company}
+                          className="h-3.5 w-auto object-contain max-w-[85px]"
+                          loading="lazy"
+                        />
+                      </span>
+                    )
                   )}
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-400 shrink-0">
@@ -76,18 +106,48 @@ export function Experience({ data, lang }) {
           <div className="card-print p-5 sm:p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/70">
             <div className="flex flex-wrap items-center gap-2 mb-2">
               <GraduationCap className="w-5 h-5 text-emerald-400 shrink-0" />
-              <h3 className="text-base sm:text-lg font-bold text-white">
-                {data.personal.education}
-              </h3>
+              {data.personal.educationUrl ? (
+                <a
+                  href={data.personal.educationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base sm:text-lg font-bold text-white hover:text-emerald-300 inline-flex items-center gap-1.5 transition-colors group"
+                  title={`${data.personal.education} — ${data.personal.educationUrl}`}
+                >
+                  <span className="group-hover:underline">{data.personal.education}</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+                </a>
+              ) : (
+                <h3 className="text-base sm:text-lg font-bold text-white">
+                  {data.personal.education}
+                </h3>
+              )}
               {data.personal.educationLogo && (
-                <span className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0">
-                  <img
-                    src={data.personal.educationLogo}
-                    alt="НГУ"
-                    className="h-3.5 w-auto object-contain max-w-[80px]"
-                    loading="lazy"
-                  />
-                </span>
+                data.personal.educationUrl ? (
+                  <a
+                    href={data.personal.educationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0 hover:scale-105 hover:border-emerald-500/60 transition-all duration-150 cursor-pointer"
+                    title={`НГУ — ${data.personal.educationUrl}`}
+                  >
+                    <img
+                      src={data.personal.educationLogo}
+                      alt="НГУ"
+                      className="h-3.5 w-auto object-contain max-w-[80px]"
+                      loading="lazy"
+                    />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0">
+                    <img
+                      src={data.personal.educationLogo}
+                      alt="НГУ"
+                      className="h-3.5 w-auto object-contain max-w-[80px]"
+                      loading="lazy"
+                    />
+                  </span>
+                )
               )}
             </div>
             <p className="text-sm text-zinc-300">
