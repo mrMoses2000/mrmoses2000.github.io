@@ -242,6 +242,7 @@ export const content = {
         period: "Ноя 2022 — Дек 2022",
         role: "C Developer / Systems Engineer",
         company: "Ideco",
+        logo: "/logos/ideco.png",
         location: "Екатеринбург",
         desc: "Разработка модулей высокопроизводительной сетевой фильтрации трафика в Linux.",
         details: [
@@ -254,7 +255,8 @@ export const content = {
       {
         period: "Авг 2021 — Окт 2022",
         role: "Инженер-программист (Embedded & Systems)",
-        company: "ООО «Ин-Софт»",
+        company: "ООО «Ин-Софт» (Eltex)",
+        logo: "/logos/eltex.png",
         location: "Новосибирск",
         desc: "Системное программирование на C/C++ для сетевого оборудования (Wi-Fi точки доступа на MIPS-чипсетах Realtek).",
         details: [
@@ -570,6 +572,7 @@ export const content = {
         period: "Nov 2022 — Dec 2022",
         role: "C Developer / Systems Engineer",
         company: "Ideco",
+        logo: "/logos/ideco.png",
         location: "Ekaterinburg",
         desc: "High-throughput Linux network packet filtering and security software.",
         details: [
@@ -582,7 +585,8 @@ export const content = {
       {
         period: "Aug 2021 — Oct 2022",
         role: "Systems & Embedded Software Engineer",
-        company: "In-Soft LLC",
+        company: "In-Soft LLC (Eltex)",
+        logo: "/logos/eltex.png",
         location: "Novosibirsk",
         desc: "Systems programming in C/C++ on Linux for Wi-Fi access points powered by Realtek MIPS chipsets.",
         details: [

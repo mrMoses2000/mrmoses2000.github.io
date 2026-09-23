@@ -28,13 +28,25 @@ export function Experience({ data, lang }) {
               key={idx}
               className="card-print p-5 sm:p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/70 hover:border-zinc-700/80 transition-all"
             >
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-                <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                  <span>{item.role}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                    <span>{item.role}</span>
+                  </h3>
                   <span className="text-zinc-500 font-normal">·</span>
                   <span className="text-zinc-300 font-semibold">{item.company}</span>
-                </h3>
-                <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-400">
+                  {item.logo && (
+                    <span className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0">
+                      <img
+                        src={item.logo}
+                        alt={item.company}
+                        className="h-3.5 w-auto object-contain max-w-[85px]"
+                        loading="lazy"
+                      />
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-400 shrink-0">
                   <Calendar className="w-3.5 h-3.5 text-zinc-500" />
                   <span>{item.period}</span>
                 </div>
