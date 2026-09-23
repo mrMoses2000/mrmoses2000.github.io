@@ -14,6 +14,7 @@ export const content = {
       github: "github.com/mrMoses2000",
       githubUrl: "https://github.com/mrMoses2000",
       education: "Новосибирский государственный университет (НГУ)",
+      educationLogo: "/logos/nsu.png",
       educationDetails: "Физико-техническая информатика (2018–2021) · База: высшая математика, физика, алгоритмы",
     },
     aiPhilosophy: {
@@ -344,6 +345,7 @@ export const content = {
       github: "github.com/mrMoses2000",
       githubUrl: "https://github.com/mrMoses2000",
       education: "Novosibirsk State University (NSU)",
+      educationLogo: "/logos/nsu.png",
       educationDetails: "Physical & Technical Informatics (2018–2021) · Strong mathematical & physics foundation",
     },
     aiPhilosophy: {

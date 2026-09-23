@@ -74,11 +74,21 @@ export function Experience({ data, lang }) {
 
           {/* Education Card */}
           <div className="card-print p-5 sm:p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/70">
-            <div className="flex items-center gap-2 mb-2">
-              <GraduationCap className="w-5 h-5 text-emerald-400" />
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <GraduationCap className="w-5 h-5 text-emerald-400 shrink-0" />
               <h3 className="text-base sm:text-lg font-bold text-white">
                 {data.personal.education}
               </h3>
+              {data.personal.educationLogo && (
+                <span className="inline-flex items-center h-6 px-2 py-0.5 rounded-md bg-white border border-zinc-200/90 shadow-sm shrink-0">
+                  <img
+                    src={data.personal.educationLogo}
+                    alt="НГУ"
+                    className="h-3.5 w-auto object-contain max-w-[80px]"
+                    loading="lazy"
+                  />
+                </span>
+              )}
             </div>
             <p className="text-sm text-zinc-300">
               {data.personal.educationDetails}

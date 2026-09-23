@@ -130,9 +130,21 @@ export function Hero({ data, mode, lang }) {
             </div>
 
             <div className="w-full max-w-xs p-3 rounded-xl bg-zinc-900/30 border border-zinc-800/60 text-xs text-zinc-400 space-y-1.5">
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span className="text-zinc-500">{isRu ? "Базовое образование:" : "Education:"}</span>
-                <span className="text-zinc-300 font-medium">{isRu ? "НГУ (Новосибирск)" : "NSU (Novosibirsk)"}</span>
+                <span className="inline-flex items-center gap-1.5 text-zinc-300 font-medium">
+                  {data.personal.educationLogo && (
+                    <span className="inline-flex items-center h-4 px-1 py-0.5 rounded bg-white border border-zinc-200/90 shadow-xs shrink-0">
+                      <img
+                        src={data.personal.educationLogo}
+                        alt="НГУ"
+                        className="h-2.5 w-auto object-contain max-w-[45px]"
+                        loading="lazy"
+                      />
+                    </span>
+                  )}
+                  {isRu ? "НГУ (Новосибирск)" : "NSU (Novosibirsk)"}
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-zinc-500">{isRu ? "Опыт в индустрии:" : "Industry Exp:"}</span>
