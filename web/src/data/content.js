@@ -129,7 +129,7 @@ export const content = {
         systemsDesc: "Vite + React 19 + TypeScript. Детерминированный математический симулятор (state, command) => nextState, версионированное сохранение в localStorage, zero external runtime dependencies, адаптивная верстка и сквозные тесты в Chrome. Python + Gemini CLI пайплайн для генерации задач и формул.",
         tags: ["React 19", "TypeScript", "Offline Simulator", "Gemini CLI", "Deterministic Engine", "Vitest"],
         github: "https://github.com/mrMoses2000/Classes",
-        live: null,
+        live: "https://proud-misc-upcoming-transmission.trycloudflare.com/",
       },
       {
         id: "theologyreader",
@@ -457,7 +457,7 @@ export const content = {
         systemsDesc: "Vite + React 19 + TypeScript. Deterministic pure-function simulator engine (state, command) => nextState, versioned localStorage persistence, zero external runtime dependencies, and headless Chrome E2E verification. Python + Gemini CLI pipelines for structured problem sets and formulas.",
         tags: ["React 19", "TypeScript", "Offline Simulator", "Gemini CLI", "Deterministic Engine", "Vitest"],
         github: "https://github.com/mrMoses2000/Classes",
-        live: null,
+        live: "https://proud-misc-upcoming-transmission.trycloudflare.com/",
       },
       {
         id: "theologyreader",
