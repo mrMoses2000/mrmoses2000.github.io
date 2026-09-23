@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ExternalLink, Layers, Bot, Globe, Terminal } from 'lucide-react'
+import { ExternalLink, Layers, Bot, Globe, Terminal, Send } from 'lucide-react'
 import { GithubIcon } from './Icons'
 
 export function Projects({ data, mode, lang }) {
@@ -16,8 +16,8 @@ export function Projects({ data, mode, lang }) {
 
   const filteredProjects = data.projects.filter(p => {
     if (filter === 'all') return true
-    if (filter === 'bots') return p.category === 'bots' || p.category === 'ai'
-    if (filter === 'web') return p.category === 'web'
+    if (filter === 'bots') return p.category === 'bots' || p.category === 'ai' || Boolean(p.bot)
+    if (filter === 'web') return p.category === 'web' || Boolean(p.live)
     if (filter === 'systems') return p.category === 'systems' || p.category === 'ai'
     return true
   })
@@ -102,16 +102,34 @@ export function Projects({ data, mode, lang }) {
               </div>
 
               {/* Action Links */}
-              <div className="flex items-center gap-3 pt-5 mt-5 border-t border-zinc-800/60 no-print">
+              <div className="flex flex-wrap items-center gap-2.5 pt-4 mt-4 border-t border-zinc-800/60 no-print">
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-950 text-xs font-semibold hover:bg-white transition-all"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-950 text-xs font-semibold hover:bg-white transition-all shadow-sm"
                   >
-                    <span>{isRu ? "Открыть проект" : "Live Demo"}</span>
+                    <span>{isRu ? "Открыть сайт" : "Live Site"}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+
+                {project.bot && (
+                  <a
+                    href={project.bot}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-950/40 border border-blue-800/60 text-blue-300 hover:text-blue-100 hover:border-blue-600 text-xs font-medium transition-all group/bot"
+                    title={project.botAccess ? (isRu ? `Доступ: ${project.botAccess}` : `Access: ${project.botAccess}`) : undefined}
+                  >
+                    <Send className="w-3 h-3 text-blue-400 group-hover/bot:translate-x-0.5 transition-transform" />
+                    <span>{project.botLabel || (isRu ? "Telegram-бот" : "Telegram Bot")}</span>
+                    {project.botAccess && (
+                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-blue-900/60 text-blue-300/90 border border-blue-700/50">
+                        {project.botAccess}
+                      </span>
+                    )}
                   </a>
                 )}
 
